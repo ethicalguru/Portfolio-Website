@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIV_SEC | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-0 w-full z-40 transition-all duration-300 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="home.html" class="text-xl font-bold font-mono cursor-pointer flex items-center space-x-2 text-slate-100 hover:text-emerald-400 transition-colors">
+                <i data-lucide="shield" class="text-emerald-500 w-6 h-6"></i>
+                <span>DIV_SEC</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="home.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all bg-emerald-500/10 text-emerald-400 border border-emerald-500/50" data-tab="home"><span>_home</span></a>
+                <a href="projects.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all text-slate-400 hover:text-emerald-300" data-tab="projects"><span>_projects</span></a>
+                <a href="articles.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all text-slate-400 hover:text-emerald-300" data-tab="articles"><span>_articles</span></a>
+                <a href="lab.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md text-amber-400 hover:text-amber-300 border border-amber-500/30 transition-all" data-tab="ai_lab"><span>_ai_lab</span></a>
+            </nav>
+            
+            <button class="md:hidden text-slate-200" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
+            <div class="px-4 py-6 space-y-4 flex flex-col">
+                <a href="home.html" class="text-left text-slate-300">_home</a>
+                <a href="projects.html" class="text-left text-slate-300">_projects</a>
+                <a href="articles.html" class="text-left text-slate-300">_articles</a>
+                <a href="lab.html" class="text-left text-slate-300">_ai_lab</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20 min-h-screen flex flex-col pb-20">
+        <!-- Hero Section -->
+        <div class="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-slate-950 to-slate-950 pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-sm mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span>Available for Hire</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-slate-100 mb-6 tracking-tight">
+                        Divyanshu <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Malik</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl">
+                        I'm a Second year Cybersecurity Student specializing in offensive security, network defense, and AI ML security.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="projects.html" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold rounded-lg transition-all hover:scale-105 flex items-center">
+                            cd Projects <i data-lucide="chevron-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                        <a href="articles.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg border border-slate-700 transition-all hover:border-emerald-500/50">
+                            cd Articles
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mock Terminal Animation -->
+                <div class="hidden lg:block relative">
+                    <div class="w-full aspect-square bg-slate-900/50 rounded-2xl border border-slate-800 p-6 backdrop-blur-sm">
+                        <div class="w-full h-full bg-slate-950 rounded-lg border border-slate-800 overflow-hidden flex flex-col font-mono text-sm shadow-2xl">
+                            <div class="bg-slate-900 px-4 py-3 flex items-center space-x-2 border-b border-slate-800">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="ml-2 text-slate-500 text-xs">bash — 80x24</span>
+                            </div>
+                            <div class="p-4 text-slate-300 flex flex-col">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-emerald-400">→</span>
+                                    <span class="text-slate-300">~</span>
+                                    <span class="text-emerald-400 font-bold">whoami</span>
+                                </div>
+                                <div class="text-slate-400 mt-1">Result: Security Enthusiast</div>
+                                
+                                <div class="flex items-center space-x-2 mt-6">
+                                    <span class="text-emerald-400">→</span>
+                                    <span class="text-slate-300">~</span>
+                                    <span class="text-emerald-400 font-bold">nmap -sS target</span>
+                                </div>
+                                <div class="text-slate-400 mt-1">Starting Nmap... PORT 80/tcp open http</div>
+                                
+                                <div class="flex items-center space-x-2 mt-6">
+                                    <span class="text-emerald-400">→</span>
+                                    <span class="animate-pulse">_</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="bg-slate-900/50 py-20 border-y border-slate-800/50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-4 flex items-center"><span class="text-emerald-500 mr-2">./</span>Technical Arsenal</h2>
+                    <div class="h-1 w-20 bg-emerald-500 rounded mb-4"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Skills will be inserted here by JavaScript -->
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-center space-x-4 hover:border-emerald-500/30 transition-colors">
+                        <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                            <i data-lucide="wifi" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-slate-200">Network Security</span>
+                                <span class="text-slate-500 text-sm">90%</span>
+                            </div>
+                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-center space-x-4 hover:border-emerald-500/30 transition-colors">
+                        <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                            <i data-lucide="shield" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-slate-200">Penetration Testing</span>
+                                <span class="text-slate-500 text-sm">55%</span>
+                            </div>
+                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-center space-x-4 hover:border-emerald-500/30 transition-colors">
+                        <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                            <i data-lucide="lock" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-slate-200">Cryptography</span>
+                                <span class="text-slate-500 text-sm">40%</span>
+                            </div>
+                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-center space-x-4 hover:border-emerald-500/30 transition-colors">
+                        <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                            <i data-lucide="terminal" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-slate-200">Linux Administration</span>
+                                <span class="text-slate-500 text-sm">95%</span>
+                            </div>
+                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-center space-x-4 hover:border-emerald-500/30 transition-colors">
+                        <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                            <i data-lucide="hash" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-slate-200">Python & Scripting</span>
+                                <span class="text-slate-500 text-sm">88%</span>
+                            </div>
+                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex items-center space-x-4 hover:border-emerald-500/30 transition-colors">
+                        <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                            <i data-lucide="globe" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-slate-200">Web App Security</span>
+                                <span class="text-slate-500 text-sm">60%</span>
+                            </div>
+                            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Certifications Section -->
+        <div class="bg-slate-900/50 py-20 border-y border-slate-800/50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-4 flex items-center">
+                        <span class="text-emerald-500 mr-2">./</span>Certifications & Credentials
+                    </h2>
+                    <div class="h-1 w-32 bg-emerald-500 rounded mb-4"></div>
+                    <p class="text-slate-400 max-w-2xl">Professional certifications and recognized credentials in cybersecurity and information technology.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Certification Card 1 -->
+                    <div class="group bg-slate-900/50 border border-slate-800 rounded-lg p-6 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="p-3 bg-emerald-500/10 rounded-lg text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                                <i data-lucide="award" class="w-8 h-8"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-mono rounded-full border border-emerald-500/30">
+                                ACTIVE
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">CompTIA Security+</h3>
+                        <p class="text-slate-400 text-sm mb-4">CompTIA</p>
+                        <div class="flex items-center text-slate-500 text-sm font-mono mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Issued: Jan 2024</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <a href="#" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium flex items-center transition-colors">
+                                View Credential <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certification Card 2 -->
+                    <div class="group bg-slate-900/50 border border-slate-800 rounded-lg p-6 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="p-3 bg-emerald-500/10 rounded-lg text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                                <i data-lucide="shield-check" class="w-8 h-8"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-mono rounded-full border border-emerald-500/30">
+                                ACTIVE
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Certified Ethical Hacker (CEH)</h3>
+                        <p class="text-slate-400 text-sm mb-4">EC-Council</p>
+                        <div class="flex items-center text-slate-500 text-sm font-mono mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Issued: Mar 2024</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <a href="#" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium flex items-center transition-colors">
+                                View Credential <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certification Card 3 -->
+                    <div class="group bg-slate-900/50 border border-slate-800 rounded-lg p-6 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="p-3 bg-emerald-500/10 rounded-lg text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                                <i data-lucide="network" class="w-8 h-8"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-slate-700 text-slate-400 text-xs font-mono rounded-full border border-slate-600">
+                                IN PROGRESS
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">OSCP - Offensive Security</h3>
+                        <p class="text-slate-400 text-sm mb-4">Offensive Security</p>
+                        <div class="flex items-center text-slate-500 text-sm font-mono mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Expected: Jun 2025</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <span class="text-slate-500 text-sm font-medium">Certification in progress</span>
+                        </div>
+                    </div>
+
+                    <!-- Certification Card 4 -->
+                    <div class="group bg-slate-900/50 border border-slate-800 rounded-lg p-6 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="p-3 bg-emerald-500/10 rounded-lg text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                                <i data-lucide="cloud" class="w-8 h-8"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-mono rounded-full border border-emerald-500/30">
+                                ACTIVE
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">AWS Security Specialty</h3>
+                        <p class="text-slate-400 text-sm mb-4">Amazon Web Services</p>
+                        <div class="flex items-center text-slate-500 text-sm font-mono mb-3">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>Issued: Nov 2024</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+                            <a href="#" class="text-emerald-400 hover:text-emerald-300 text-sm font-medium flex items-center transition-colors">
+                                View Credential <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Footer -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center p-4 bg-slate-900/30 border border-slate-800 rounded-lg">
+                        <div class="text-3xl font-bold text-emerald-400 mb-1">4</div>
+                        <div class="text-slate-500 text-sm font-mono">Total Certifications</div>
+                    </div>
+                    <div class="text-center p-4 bg-slate-900/30 border border-slate-800 rounded-lg">
+                        <div class="text-3xl font-bold text-emerald-400 mb-1">3</div>
+                        <div class="text-slate-500 text-sm font-mono">Active Credentials</div>
+                    </div>
+                    <div class="text-center p-4 bg-slate-900/30 border border-slate-800 rounded-lg">
+                        <div class="text-3xl font-bold text-emerald-400 mb-1">1</div>
+                        <div class="text-slate-500 text-sm font-mono">In Progress</div>
+                    </div>
+                    <div class="text-center p-4 bg-slate-900/30 border border-slate-800 rounded-lg">
+                        <div class="text-3xl font-bold text-emerald-400 mb-1">2025</div>
+                        <div class="text-slate-500 text-sm font-mono">Latest Year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-auto bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-500 font-mono text-sm">
+            <p>&copy; 2025 Cybersecurity Portfolio Prototype.</p>
+        </div>
+    </footer>
+
+        <!-- Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- UNDER MAINTENANCE - Chat functionality temporarily disabled -->
+        <!-- Original chat window code preserved below -->
+        
+        <!--
+        <div id="chat-window" class="hidden mb-4 w-80 md:w-96 bg-slate-950 border border-emerald-500/50 rounded-lg shadow-2xl overflow-hidden flex flex-col animate-in slide-in-from-bottom-10 fade-in">
+            <div class="bg-emerald-900/20 p-3 border-b border-emerald-500/30 flex justify-between items-center">
+                <div class="flex items-center space-x-2 text-emerald-400">
+                    <i data-lucide="terminal" class="w-4 h-4"></i>
+                    <span class="text-xs font-mono font-bold">ASSISTANT_TERMINAL</span>
+                </div>
+                <button onclick="toggleChat()" class="text-emerald-400 hover:text-white">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-3 bg-slate-950/95 font-mono text-sm">
+                <div class="text-left">
+                    <div class="inline-block p-2 rounded-lg bg-emerald-900/10 text-emerald-400 border border-emerald-500/20">
+                        Terminal Assistant v2.0 initialized. How can I assist?
+                    </div>
+                </div>
+            </div>
+
+            <form onsubmit="handleChatSubmit(event)" class="p-3 bg-slate-900 border-t border-slate-800 flex space-x-2">
+                <input id="chat-input" type="text" placeholder="Enter command..." class="flex-1 bg-slate-950 border border-slate-700 rounded px-3 py-2 text-slate-200 text-sm focus:border-emerald-500 focus:outline-none font-mono">
+                <button type="submit" class="p-2 bg-emerald-600 rounded hover:bg-emerald-700 text-white transition-colors">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </form>
+        </div>
+        
+        <button onclick="toggleChat()" class="p-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 flex items-center justify-center">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+        </button>
+        -->
+
+        <!-- Maintenance Notice Button -->
+        <button disabled class="p-4 bg-slate-700 text-slate-400 rounded-full shadow-lg cursor-not-allowed flex items-center justify-center relative group">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+            <div class="absolute bottom-full right-0 mb-2 px-3 py-2 bg-slate-800 text-slate-300 text-xs rounded border border-slate-600 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                🔧 Under Maintenance
+            </div>
+        </button>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // Chat functionality temporarily disabled
+        /*
+        function toggleChat() {
+            document.getElementById('chat-window').classList.toggle('hidden');
+        }
+
+        function handleChatSubmit(event) {
+            event.preventDefault();
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            const messagesDiv = document.getElementById('chat-messages');
+            
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'text-right';
+            userMsg.innerHTML = `<div class="inline-block p-2 rounded-lg bg-emerald-500/20 text-emerald-200 border border-emerald-500/40">${message}</div>`;
+            messagesDiv.appendChild(userMsg);
+
+            input.value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Simulate AI response
+            setTimeout(() => {
+                const aiMsg = document.createElement('div');
+                aiMsg.className = 'text-left';
+                aiMsg.innerHTML = `<div class="inline-block p-2 rounded-lg bg-emerald-900/10 text-emerald-400 border border-emerald-500/20">Processing: ${message}</div>`;
+                messagesDiv.appendChild(aiMsg);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 500);
+        }
+        */
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

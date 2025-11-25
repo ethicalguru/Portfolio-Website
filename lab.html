@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV_SEC | AI Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-0 w-full z-40 transition-all duration-300 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="home.html" class="text-xl font-bold font-mono cursor-pointer flex items-center space-x-2 text-slate-100 hover:text-emerald-400 transition-colors">
+                <i data-lucide="shield" class="text-emerald-500 w-6 h-6"></i>
+                <span>DEV_SEC</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="home.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all text-slate-400 hover:text-emerald-300" data-tab="home"><span>_home</span></a>
+                <a href="projects.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all text-slate-400 hover:text-emerald-300" data-tab="projects"><span>_projects</span></a>
+                <a href="articles.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all text-slate-400 hover:text-emerald-300" data-tab="articles"><span>_articles</span></a>
+                <a href="lab.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md text-amber-400 hover:text-amber-300 border border-amber-500/30 transition-all bg-amber-500/10" data-tab="ai_lab"><span>_ai_lab</span></a>
+            </nav>
+            
+            <button class="md:hidden text-slate-200" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
+            <div class="px-4 py-6 space-y-4 flex flex-col">
+                <a href="home.html" class="text-left text-slate-300">_home</a>
+                <a href="projects.html" class="text-left text-slate-300">_projects</a>
+                <a href="articles.html" class="text-left text-slate-300">_articles</a>
+                <a href="lab.html" class="text-left text-slate-300">_ai_lab</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20 min-h-screen flex flex-col">
+        <div class="max-w-6xl mx-auto px-6 py-20 w-full">
+            <!-- Hero Section for AI Lab -->
+            <div class="mb-16">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono text-sm mb-6">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                    </span>
+                    <span>AI Powered</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-100 mb-4 flex items-center">
+                    <span class="text-amber-500 mr-3">./</span>AI Security Lab
+                </h2>
+                <p class="text-lg text-slate-400 max-w-2xl">Explore advanced security concepts with AI-powered assistance. Ask anything about cybersecurity, get real-time analysis, and learn from expert explanations.</p>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="bg-slate-900/50 border border-slate-700 rounded-xl overflow-hidden flex flex-col h-[600px]">
+                        <!-- Chat Header -->
+                        <div class="bg-gradient-to-r from-amber-900/30 to-amber-900/10 p-4 border-b border-slate-700 flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="p-2 bg-amber-500/20 rounded-lg">
+                                    <i data-lucide="brain" class="w-5 h-5 text-amber-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-amber-400">Security AI Assistant</p>
+                                    <p class="text-xs text-slate-500">Powered by Gemini 2.0</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-xs text-slate-500">
+                                <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                                <span>Online</span>
+                            </div>
+                        </div>
+
+                        <!-- Messages Area -->
+                        <div id="chat-messages" class="flex-grow overflow-y-auto p-6 space-y-4 bg-slate-950/50">
+                            <div class="text-left">
+                                <div class="inline-block p-3 rounded-lg bg-amber-900/20 text-amber-300 border border-amber-500/30 max-w-xs">
+                                    <p class="text-sm">Hi! I'm your AI security assistant. Ask me about vulnerabilities, attack vectors, security frameworks, or any cybersecurity topic. What would you like to learn?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Input Area -->
+                        <div class="p-4 border-t border-slate-700 bg-slate-900/50">
+                            <form onsubmit="handleChat(event)" class="flex space-x-2">
+                                <input 
+                                    type="text" 
+                                    id="lab-input" 
+                                    placeholder="Ask about security..." 
+                                    class="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-slate-200 text-sm focus:border-amber-500 focus:outline-none font-mono placeholder-slate-500"
+                                >
+                                <button 
+                                    type="submit" 
+                                    class="p-3 bg-amber-500 hover:bg-amber-600 text-slate-900 rounded-lg transition-colors font-bold"
+                                >
+                                    <i data-lucide="send" class="w-5 h-5"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Questions Sidebar -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">Quick Questions</h3>
+                    
+                    <button class="w-full text-left p-4 bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 rounded-lg transition-all group">
+                        <p class="text-sm font-mono text-amber-400 group-hover:text-amber-300 transition-colors">What are the top 5 OWASP vulnerabilities?</p>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 mt-2"></i>
+                    </button>
+
+                    <button class="w-full text-left p-4 bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 rounded-lg transition-all group">
+                        <p class="text-sm font-mono text-amber-400 group-hover:text-amber-300 transition-colors">How to perform a network penetration test?</p>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 mt-2"></i>
+                    </button>
+
+                    <button class="w-full text-left p-4 bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 rounded-lg transition-all group">
+                        <p class="text-sm font-mono text-amber-400 group-hover:text-amber-300 transition-colors">Explain cryptographic key exchange</p>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 mt-2"></i>
+                    </button>
+
+                    <button class="w-full text-left p-4 bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 rounded-lg transition-all group">
+                        <p class="text-sm font-mono text-amber-400 group-hover:text-amber-300 transition-colors">What is a zero-day vulnerability?</p>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 mt-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lab Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="p-3 bg-amber-500/10 rounded-lg w-fit mb-4">
+                        <i data-lucide="zap" class="w-6 h-6 text-amber-400"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2">Real-time Analysis</h4>
+                    <p class="text-slate-400 text-sm">Get instant analysis and explanations for any security concept or vulnerability.</p>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="p-3 bg-amber-500/10 rounded-lg w-fit mb-4">
+                        <i data-lucide="book" class="w-6 h-6 text-amber-400"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2">Learning Resources</h4>
+                    <p class="text-slate-400 text-sm">Access comprehensive guides, tutorials, and best practices for security hardening.</p>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-6">
+                    <div class="p-3 bg-amber-500/10 rounded-lg w-fit mb-4">
+                        <i data-lucide="code" class="w-6 h-6 text-amber-400"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-100 mb-2">Code Examples</h4>
+                    <p class="text-slate-400 text-sm">Get practical code samples and implementation patterns for secure development.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-auto bg-slate-900 border-t border-slate-800 pt-16 pb-8 w-full">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-500 font-mono text-sm">
+            <p>&copy; 2024 Cybersecurity Portfolio.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function handleChat(e) {
+            e.preventDefault();
+            const input = document.getElementById('lab-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            // Add user message
+            const messagesDiv = document.getElementById('chat-messages');
+            const userMsg = document.createElement('div');
+            userMsg.className = 'text-right';
+            userMsg.innerHTML = `<div class="inline-block p-3 rounded-lg bg-amber-500/20 text-amber-200 border border-amber-500/40 max-w-xs">${message}</div>`;
+            messagesDiv.appendChild(userMsg);
+
+            // Clear input
+            input.value = '';
+
+            // Simulate AI response
+            setTimeout(() => {
+                const aiMsg = document.createElement('div');
+                aiMsg.className = 'text-left';
+                aiMsg.innerHTML = `<div class="inline-block p-3 rounded-lg bg-amber-900/20 text-amber-300 border border-amber-500/30 max-w-xs"><p class="text-sm">I'm processing your question... This is a demo interface. Connect a real API for full functionality!</p></div>`;
+                messagesDiv.appendChild(aiMsg);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 1000);
+
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV_SEC | Articles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-0 w-full z-40 transition-all duration-300 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="home.html" class="text-xl font-bold font-mono cursor-pointer flex items-center space-x-2 text-slate-100 hover:text-emerald-400 transition-colors">
+                <i data-lucide="shield" class="text-emerald-500 w-6 h-6"></i>
+                <span>DEV_SEC</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="home.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all text-slate-400 hover:text-emerald-300" data-tab="home"><span>_home</span></a>
+                <a href="projects.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all text-slate-400 hover:text-emerald-300" data-tab="projects"><span>_projects</span></a>
+                <a href="articles.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md transition-all bg-emerald-500/10 text-emerald-400 border border-emerald-500/50" data-tab="articles"><span>_articles</span></a>
+                <a href="lab.html" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-md text-amber-400 hover:text-amber-300 border border-amber-500/30 transition-all" data-tab="ai_lab"><span>_ai_lab</span></a>
+            </nav>
+            
+            <button class="md:hidden text-slate-200" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
+            <div class="px-4 py-6 space-y-4 flex flex-col">
+                <a href="home.html" class="text-left text-slate-300">_home</a>
+                <a href="projects.html" class="text-left text-slate-300">_projects</a>
+                <a href="articles.html" class="text-left text-slate-300">_articles</a>
+                <a href="lab.html" class="text-left text-slate-300">_ai_lab</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20 min-h-screen flex flex-col">
+        <div class="max-w-6xl mx-auto px-6 py-20 w-full">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-100 mb-4 flex items-center"><span class="text-emerald-500 mr-2">./</span>Security Articles</h2>
+                <div class="h-1 w-20 bg-emerald-500 rounded mb-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Article 1 -->
+                <div class="bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 rounded-xl p-6 transition-all group cursor-pointer hover:shadow-2xl hover:shadow-emerald-500/10">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-xs font-mono text-amber-400 bg-amber-500/5 px-3 py-1 rounded border border-amber-500/20">Research</span>
+                        <span class="text-xs text-slate-500">In Progress</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors">Understanding Kubernetes Exploits</h3>
+                    <p class="text-slate-400 mb-4 text-sm leading-relaxed">Exploiting Race Conditions for Kubernetes Privilege Escalation.</p>
+                    <button class="text-emerald-400 hover:text-emerald-300 text-sm font-mono flex items-center group/btn">
+                        Read More 
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 rounded-xl p-6 transition-all group cursor-pointer hover:shadow-2xl hover:shadow-emerald-500/10">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-xs font-mono text-blue-400 bg-blue-500/5 px-3 py-1 rounded border border-blue-500/20">Analysis</span>
+                        <span class="text-xs text-slate-500">Nov 13, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors">Claude Code Jailbreak Hack</h3>
+                    <p class="text-slate-400 mb-4 text-sm leading-relaxed">US AI firm Anthropic revealed that a Chinese state-sponsored hacker group had abused its AI assistant, Claude, in a broad espionage campaign.</p>
+                    <a href="pdfs/claude-jailbreak.pdf" download class="text-emerald-400 hover:text-emerald-300 text-sm font-mono flex items-center group/btn">
+                        Read More 
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 rounded-xl p-6 transition-all group cursor-pointer hover:shadow-2xl hover:shadow-emerald-500/10">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-xs font-mono text-emerald-400 bg-emerald-500/5 px-3 py-1 rounded border border-emerald-500/20">Tutorial</span>
+                        <span class="text-xs text-slate-500">Oct 15, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors">Stealthy Keylogger Detection</h3>
+                    <p class="text-slate-400 mb-4 text-sm leading-relaxed">Best practices for stealthy keylogger detection and how they are crafted, purely ethical cybersecurity educational knowledge.</p>
+                    <button class="text-emerald-400 hover:text-emerald-300 text-sm font-mono flex items-center group/btn">
+                        Read More 
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 rounded-xl p-6 transition-all group cursor-pointer hover:shadow-2xl hover:shadow-emerald-500/10">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-xs font-mono text-purple-400 bg-purple-500/5 px-3 py-1 rounded border border-purple-500/20">Guide</span>
+                        <span class="text-xs text-slate-500">Sep 22, 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-3 group-hover:text-emerald-400 transition-colors">OWASP Top 10 in 2025</h3>
+                    <p class="text-slate-400 mb-4 text-sm leading-relaxed">Comprehensive guide to the most critical web application security risks and mitigation strategies.</p>
+                    <a href="https://owasp.org/Top10/2025/0x00_2025-Introduction/" download class="text-emerald-400 hover:text-emerald-300 text-sm font-mono flex items-center group/btn">
+                        Read More 
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="mt-16 pt-12 border-t border-slate-800">
+                <h3 class="text-lg font-bold text-slate-100 mb-6">Filter by Category</h3>
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-4 py-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/50 rounded-lg hover:bg-emerald-500/20 transition-all">All</button>
+                    <button class="px-4 py-2 bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:border-emerald-500/50 transition-all">Research</button>
+                    <button class="px-4 py-2 bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:border-emerald-500/50 transition-all">Tutorial</button>
+                    <button class="px-4 py-2 bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:border-emerald-500/50 transition-all">Analysis</button>
+                    <button class="px-4 py-2 bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:border-emerald-500/50 transition-all">Guide</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-auto bg-slate-900 border-t border-slate-800 pt-16 pb-8 w-full">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-500 font-mono text-sm">
+            <p>&copy; 2025 Cybersecurity Portfolio Prototype.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        
+        lucide.createIcons();
+    </script>
+</body>
+</html>
